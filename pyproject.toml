@@ -1,0 +1,61 @@
+[build-system]
+requires = [
+  "setuptools>=59",
+  "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.black]
+target-version = ['py39']
+line-length = 110
+
+
+[tool.ruff]
+# Documentation: https://github.com/charliermarsh/ruff#configuration
+
+target-version = "py39"
+line-length = 100
+#source = ["src"]
+
+# Never try to fix `F401` (unused imports).
+unfixable = ["F401"]
+
+# select = "ALL" # Enables all checks, even conflicting ones
+# ignore = []
+
+# On top of the default `select` (`E`, `F`), enable flake8-bugbear (`B`) and flake8-quotes (`Q`).
+extend-select = [
+  "W", # pycodestyle warnings
+  "N", # pep8-naming
+  "A", # flake8-builtins -> Prevent shadowing builtins
+  "B", # flake8-bugbear
+  "D", # pydocstyle
+  "C4", # flake8-comprehensions
+  "UP", # pyupgrade -> look for old python syntax that can be upgraded
+  "EM", # flake8-errmsg -> make sure Exceptions are correctly formatted; Remove?
+  "PD", # pandas-vet
+  "C90", # McCabe complexity
+  "T20", # flake8-print
+  "BLE", # flake8-blind-except -> Do not use blind exception "Exception"
+  "ISC", # flake8-implicit-str-concat
+  "YTT", # flake8-2020 -> Make sure sys.version_info is parsed correctly
+  "RET", # flake8-return
+  "SIM", # flake8-simplify -> Suggest simpler constructs
+  "FBT", # flake8-boolean-trap -> TODO testing
+  "ICN", # flake8-import-conventions -> TODO testing
+  "ANN2", # flake8-annotations ->	Require return type annotations
+  "ANN001", # flake8-annotations -> MissingTypeFunctionArgument
+  "PGH002", # pygrep-hooks -> log.warn is deprecated in favor of warning
+]
+
+[tool.ruff.pydocstyle]
+# Use Google-style docstrings.
+convention = "google"
+
+[tool.ruff.flake8-import-conventions.extend-aliases]
+"ElementTree" = "ET"
+
+[tool.ruff.flake8-errmsg]
+#Maximum string length for string literals in exception messages.
+max-string-length = 110

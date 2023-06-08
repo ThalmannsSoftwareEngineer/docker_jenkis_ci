@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.black-formatter",
+    "charliermarsh.ruff",
+    "mhutchie.git-graph",
+    "KevinRose.vsc-python-indent",
+    "njpwerner.autodocstring",
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml",
+    "ZainChen.json",
+  ],
+}
