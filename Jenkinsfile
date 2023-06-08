@@ -17,8 +17,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Ausführen des Python-Skripts
-                echo 'fertig -> python print_time.py'
+                // Ausführen des Python-Skripts-Test
+                sh 'python print_time_test.py'
             }
         }
     }
