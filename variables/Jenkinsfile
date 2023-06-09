@@ -1,0 +1,27 @@
+// https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#using-environment-variables
+
+pipeline {
+    agent any
+
+    environment {
+        def myString = "Hello Kevin"
+        def myNumber = 22
+        def myBool = true
+    }
+
+    stages {
+        stage("Demo"){
+            steps {
+                echo "myString: ${myString}"
+                echo "myNumber: ${myNumber}"
+                echo "myBool  : ${myBool}"
+            }
+        }
+        stage('Example'){
+            steps {
+                echo "Running ${env.BUILD_NUMBER} on ${env.JENKINS_URL}"
+            }
+        }
+    }
+
+}

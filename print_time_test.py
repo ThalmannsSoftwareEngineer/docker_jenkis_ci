@@ -6,6 +6,9 @@ from unittest.mock import patch
 
 from print_time import current_time
 
+import coverage
+cov = coverage.Coverage()
+cov.start()
 
 class CurrentTimeTestCase(unittest.TestCase):
     """Unittest.
@@ -25,4 +28,7 @@ class CurrentTimeTestCase(unittest.TestCase):
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
 if __name__ == "__main__":
+    cov.stop()
+    cov.save()
+    cov.report()
     unittest.main()
