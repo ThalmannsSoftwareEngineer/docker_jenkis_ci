@@ -2,12 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Python') {
+        stage('Install Python & PIP') {
             steps {
                 // Installiere Python im Container
                 sh 'apt-get update && apt-get install -y python3' 
-                sh 'pip3 install --upgrade pip' // Pip aktualisieren
-                sh 'pip3 install codecoverage' // Codecoverage-Paket installieren
+                sh 'apt install -y python3-pip'
             }
         }
         stage('Checkout') {
