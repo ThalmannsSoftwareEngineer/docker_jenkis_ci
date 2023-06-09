@@ -1,21 +1,22 @@
-# Verwende das offizielle Python-Image als Basis
-FROM python:3.9
+# Basisimage mit Java und Jenkins
+FROM jenkins/jenkins
 
-# Installiere Git
-RUN apt-get update && apt-get install -y git
+# Als Root-Benutzer wechseln
+USER root
 
-# Setze das Arbeitsverzeichnis im Container
-WORKDIR /app
+# Python und Pip installieren
+RUN apt-get update && apt-get install -y python3
+RUN apt install -y python3-pip
 
-# Kopiere die Anwendungsdateien in das Arbeitsverzeichnis
-COPY . /app
+# Coverage installieren
+RUN pip3 install coverage
 
-# Führe ein Kommando aus, um die erforderlichen Python-Pakete zu installieren
-RUN apt-get update
-RUN apt-get install -y podman git python3-pip
-RUN python3 -m pip install git-review podman-compose
-# Klonen des Git-Repositorys
-RUN git clone https://opendev.org/zuul/zuul
+# Install plugins using jenkins-plugin-cli
+COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
+RUN jenkins-plugin-cli --plugins < /usr/share/jenkins/ref/plugins.txt
 
-# Führe das Python-Skript aus
-# CMD ["python", "app.py"]
+
+# Benutzer zurückwechseln
+USER jenkins
+# Exponieren des Jenkins-Webinterfaces
+EXPOSE 8080

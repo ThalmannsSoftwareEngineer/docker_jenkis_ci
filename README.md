@@ -9,7 +9,8 @@ Start with Docker
 |`docker exec -it zuul_thalmann /bin/bash`                              | Zuschalten auf den Container                                            |
 
 Start Jenkins with Docker
-| Command                                                                                                     | Description                   |
-| ------------------------------------------------------------------------------------------------------------| ------------------------------|
-|`docker run --name jenkins_thalmann --user root --privileged -d -p 8080:8080 -p 50000:50000 jenkins/jenkins` | Docker Container erstellen    |
-|`ddocker logs jenkins_thalmann`                                                                              | fur das Passwor               |
+| Command                                                                                                        | Description                   |
+| -------------------------------------------------------------------------------------------------------------- | ------------------------------|
+|`docker build -t jenkins_thalmann2 .`                                                                           | Docker Container erstellen    |
+|`docker run --name jenkins_thalmann2 --user root --privileged -d -p 8080:8080 -p 50000:50000 jenkins_thalmann2` | Docker Container erstellen    |
+|`docker logs jenkins_thalmann2`                                                                                 | fur das Passwor               |

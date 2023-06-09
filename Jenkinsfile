@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Python & PIP') {
-            steps {
-                // Installiere Python im Container
-                sh 'apt-get update && apt-get install -y python3' 
-                sh 'apt install -y python3-pip'
-                sh 'pip install coverage'
-            }
-        }
+        // stage('Install Python & PIP') {
+        //     steps {
+        //         // Installiere Python im Container
+        //         sh 'apt-get update && apt-get install -y python3' 
+        //         sh 'apt install -y python3-pip'
+        //         sh 'pip install coverage'
+        //     }
+        // }
         stage('Checkout') {
             steps {
                 // Checkout des Codes aus dem Repository
