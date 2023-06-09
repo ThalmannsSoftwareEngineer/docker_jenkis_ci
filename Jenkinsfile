@@ -12,13 +12,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Ausführen des Python-Skripts
-                sh 'python print_time.py'
+                sh 'python /var/jenkins_home/workspace/myPipeline/print_time.py'
             }
         }
         stage('Test') {
             steps {
                 // Ausführen des Python-Skripts-Test
-                sh 'python print_time_test.py'
+                sh 'python /var/jenkins_home/workspace/myPipeline/print_time_test.py'
             }
         }
     }
