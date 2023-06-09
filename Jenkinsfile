@@ -2,21 +2,12 @@ pipeline {
     agent any
 
     stages {
-        // stage('Install Python & PIP') {
-        //     steps {
-        //         // Installiere Python im Container
-        //         sh 'apt-get update && apt-get install -y python3' 
-        //         sh 'apt install -y python3-pip'
-        //         sh 'pip install coverage'
-        //     }
-        // }
         stage('Checkout') {
             steps {
                 // Checkout des Codes aus dem Repository
                 checkout scm
             }
         }
-        
         stage('Build') {
             steps {
                 // Ausführen des Python-Skripts
@@ -27,6 +18,12 @@ pipeline {
             steps {
                 // Ausführen des Python-Skripts-Test
                 sh 'python3 print_time_test.py'
+            }
+        }
+         stage('Ausgabe') {
+            steps {
+                echo "Running ${env.BUILD_NUMBER} on ${env.JENKINS_URL}"
+                echo "Run was successful!"
             }
         }
     }
