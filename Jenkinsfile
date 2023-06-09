@@ -7,6 +7,7 @@ pipeline {
                 // Installiere Python im Container
                 sh 'apt-get update && apt-get install -y python3' 
                 sh 'apt install -y python3-pip'
+                sh 'pip install coverage'
             }
         }
         stage('Checkout') {
