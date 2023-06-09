@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Ausführen des Python-Skripts
-                sh 'python3 /var/jenkins_home/workspace/myPipeline/print_time.py'
+                sh 'python3 print_time.py'
             }
         }
         stage('Test') {
