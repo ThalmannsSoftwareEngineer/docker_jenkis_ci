@@ -26,7 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Ausführen des Python-Skripts-Test
-                sh 'python3 /var/jenkins_home/workspace/myPipeline/print_time_test.py'
+                sh 'python3 print_time_test.py'
             }
         }
     }
