@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Installiere Python im Container
                 sh 'apt-get update && apt-get install -y python3' 
-                sh 'pip install coverage'
+                sh 'pip install codecoverage'
             }
         }
         stage('Checkout') {
