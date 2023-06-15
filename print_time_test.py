@@ -1,12 +1,13 @@
-"""Testing."""
+"""Unit Testing."""
 import datetime
 import unittest
 from io import StringIO
 from unittest.mock import patch
 
+import coverage
+
 from print_time import current_time
 
-import coverage
 cov = coverage.Coverage()
 cov.start()
 
@@ -31,4 +32,5 @@ if __name__ == "__main__":
     cov.stop()
     cov.save()
     cov.report()
+    unittest.main()
     unittest.main()
