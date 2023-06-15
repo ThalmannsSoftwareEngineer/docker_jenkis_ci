@@ -1,7 +1,8 @@
 // JenkinsFile
 pipeline {
+    // agent
     agent any
-
+    // stages
     stages {
         stage('Checkout') {
             steps {
