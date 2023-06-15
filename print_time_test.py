@@ -1,12 +1,13 @@
-"""Testing."""
+"""Unit Testing."""
 import datetime
 import unittest
 from io import StringIO
 from unittest.mock import patch
 
+import coverage
+
 from print_time import current_time
 
-import coverage
 cov = coverage.Coverage()
 cov.start()
 
@@ -27,8 +28,12 @@ class CurrentTimeTestCase(unittest.TestCase):
         expected_output = F"Es ist {datetime.datetime.now().strftime('%H:%M:%S')} Uhr\n"
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
+
 if __name__ == "__main__":
+    # coverage
     cov.stop()
     cov.save()
     cov.report()
+    # Unittest
     unittest.main()
+
