@@ -15,7 +15,6 @@ RUN pip3 install coverage
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN jenkins-plugin-cli --plugins < /usr/share/jenkins/ref/plugins.txt
 
-
 # Benutzer zurückwechseln
 USER jenkins
 # Exponieren des Jenkins-Webinterfaces
