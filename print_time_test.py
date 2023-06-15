@@ -30,9 +30,10 @@ class CurrentTimeTestCase(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    # coverage
     cov.stop()
     cov.save()
     cov.report()
+    # Unittest
+    unittest.main()
 
-    unittest.main()
-    unittest.main()
