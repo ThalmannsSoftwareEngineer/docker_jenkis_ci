@@ -23,6 +23,7 @@ pipeline {
         }
          stage('Ausgabe') {
             steps {
+                // Benutzerausgabe
                 echo "Running ${env.BUILD_NUMBER} on ${env.JENKINS_URL}"
                 echo "Run was successful!"
             }
