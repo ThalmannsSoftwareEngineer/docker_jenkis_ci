@@ -28,9 +28,11 @@ class CurrentTimeTestCase(unittest.TestCase):
         expected_output = F"Es ist {datetime.datetime.now().strftime('%H:%M:%S')} Uhr\n"
         self.assertEqual(mock_stdout.getvalue(), expected_output)
 
+
 if __name__ == "__main__":
     cov.stop()
     cov.save()
     cov.report()
+
     unittest.main()
     unittest.main()
