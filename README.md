@@ -14,3 +14,6 @@ Start Jenkins with Docker
 |`docker build -t jenkins_thalmann2 .`                                                                           | Docker Container erstellen    |
 |`docker run --name jenkins_thalmann2 --user root --privileged -d -p 8080:8080 -p 50000:50000 jenkins_thalmann2` | Docker Container erstellen    |
 |`docker logs jenkins_thalmann2`                                                                                 | fur das Passwor               |
+
+|`docker run --name jenkins_thalmann --user root --privileged -d -p 8080:8080 -p 50000:50000  -v /d/04_TG-C23/02_Python/docker_jenkis_ci:/app/python jenkins_thalmann2`|
+|`docker exec -it jenkins_thalmann /bin/bash`|
