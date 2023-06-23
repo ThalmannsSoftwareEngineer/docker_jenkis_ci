@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    env {
+        def global_text = "Meine erste Funktion funktioniert!"
+    }
+
     parameters {
         booleanParam(defaultValue: false, description: "Enable service?", name: "myBoolean")
     }
@@ -15,7 +19,7 @@ pipeline {
                     }
                     else {
                         echo "booleanParam is set to: ${params.myBoolean}"
-                        my_func("Meine erste Funktion funktioniert!")
+                        my_func(global_text)
                     }
                 }
             }

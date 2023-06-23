@@ -2,7 +2,6 @@
 pipeline {
     // agent
     agent any
-
     // stages
     stages {
         stage('Clean Up') {
@@ -39,8 +38,8 @@ pipeline {
         }
          stage('Build Remote') {
             steps {
-                // Trigger func-Pipline
-                build 'func'
+                // Trigger func-Pipline mit einem Übergabeparameter
+                build job: 'func', parameters: [[$class: 'booleanParamValue', name: 'myBoolean', value: true]]
             }
         }
     }
