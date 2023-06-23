@@ -39,7 +39,7 @@ pipeline {
          stage('Build Remote') {
             steps {
                 // Trigger func-Pipline mit einem Übergabeparameter
-                build job: 'func', parameters: [[$class: 'BooleanParamValue', name: 'myBoolean', value: true]]
+                build job: 'func', parameters: [[$class: 'BooleanParameterValue', name: 'myBoolean', value: true]]
             }
         }
     }
