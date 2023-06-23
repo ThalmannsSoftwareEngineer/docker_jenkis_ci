@@ -9,6 +9,7 @@ pipeline {
             steps {
                 // Clean Up
                 deleteDir()
+                echo "delete dir was successful!"
             }
         }
         stage('Checkout') {
@@ -34,6 +35,12 @@ pipeline {
                 // Benutzerausgabe
                 echo "Running ${env.BUILD_NUMBER} on ${env.JENKINS_URL}"
                 echo "Run was successful!"
+            }
+        }
+         stage('Build Remote') {
+            steps {
+                // Trigger func-Pipline
+                build 'func'
             }
         }
     }
