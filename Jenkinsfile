@@ -39,7 +39,11 @@ pipeline {
          stage('Build Remote') {
             steps {
                 // Trigger func-Pipline mit einem Übergabeparameter
-                build job: 'func', parameters: [[$class: 'BooleanParameterValue', name: 'myBoolean', value: true]]
+                // Link zur Dokumentation
+                // https://www.jenkins.io/doc/pipeline/steps/pipeline-build-step/
+                build job: 'func', parameters: [
+                    [$class: 'BooleanParameterValue', name: 'myBoolean', value: true]
+                    ]
             }
         }
     }

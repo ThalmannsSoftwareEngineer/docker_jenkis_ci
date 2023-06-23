@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         def global_text = "Meine erste Funktion funktioniert!"
+        def my_number = 22
     }
 
     parameters {
