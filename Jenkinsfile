@@ -5,6 +5,12 @@ pipeline {
 
     // stages
     stages {
+        stage('Clean Up') {
+            steps {
+                // Clean Up
+                deleteDir()
+            }
+        }
         stage('Checkout') {
             steps {
                 // Checkout des Codes aus dem Repository
