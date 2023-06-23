@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    env {
+    environment {
         def global_text = "Meine erste Funktion funktioniert!"
     }
 
