@@ -1,0 +1,17 @@
+name: Benachrichtigung über Release
+
+on:
+  release:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sende E-Mail
+        run: |
+          # Hier kannst du den Code einfügen, der die E-Mail sendet, z. B. mit einem Skript oder einem E-Mail-Dienst
+          echo "Ein neues Release wurde erstellt. Sende E-Mail an Mitglieder der Organisation..."
