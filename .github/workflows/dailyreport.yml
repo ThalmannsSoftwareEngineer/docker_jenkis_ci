@@ -9,8 +9,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  send-email:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Sende E-Mail
-        run: echo "Das hat geklappt"
+      - uses: action/checkout@v2
+      - uses: action/setup-python@v2
+        with:
+          python -version: 3.x
+      - name: Run email code
+        env:
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+        run: python send_email.py
