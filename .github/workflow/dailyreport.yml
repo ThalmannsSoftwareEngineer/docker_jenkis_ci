@@ -1,8 +1,8 @@
 name: Benachrichtigung über Release
 
 on:
-  release:
-    types: created
+  # release:
+  #   types: created
   schedule:
     -cron: '5 * * * *'
   workflow_dispatch:
