@@ -12,6 +12,4 @@ jobs:
 
     steps:
       - name: Sende E-Mail
-        run: |
-          # Hier kannst du den Code einfügen, der die E-Mail sendet, z. B. mit einem Skript oder einem E-Mail-Dienst
-          echo "Ein neues Release wurde erstellt. Sende E-Mail an Mitglieder der Organisation..."
+        run: echo "Das hat geklappt"
