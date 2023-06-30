@@ -1,22 +1,33 @@
+# Name des Workflows
 name: Benachrichtigung über Release
 
 on:
   release:
     types:
+    # Der Workflow wird ausgelöst, wenn ein Release veröffentlicht wird
       - published
-  # schedule:
-  #   - cron: '*/5 * * * *'
+  # Der Workflow kann manuell über den Workflow-Dispatch-Trigger ausgelöst werden
   workflow_dispatch:
 
 jobs:
   build:
+    # Der Workflow wird auf einem Ubuntu-Latest-Betriebssystem ausgeführt
     runs-on: ubuntu-latest
+
     steps:
+        # Aktuelles Repository auschecken.
+        # "checkout" in Version 2
       - uses: actions/checkout@v2
+        # Python-Umgebung einrichten
+        # "setup-python" in Verison 2
       - uses: actions/setup-python@v2
         with:
-          python -version: 3.x
+          # Die gewünschte Python-Version angeben
+          python-version: 3.x
+        # Schritt zum Ausführen des E-Mail-Codes
       - name: Run email code
         env:
+          # Ein Geheimnis (secret) namens USER_PASSWORD wird als Umgebungsvariable festgelegt
           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+        # Das Python-Skript "send_email.py" wird ausgeführt
         run: python send_email.py
