@@ -3,7 +3,7 @@ name: Benachrichtigung über Release
 on:
   release:
     types:
-      - created
+      - published
   # schedule:
   #   - cron: '*/5 * * * *'
   workflow_dispatch:
