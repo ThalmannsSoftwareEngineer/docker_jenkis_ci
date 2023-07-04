@@ -43,7 +43,9 @@ General Docker commands
 | `docker image prune`                                           | Löschen aller Images (auch inaktive)                                     |
 | `docker stats`                                                 | Statistiken der laufenden Container                                      |
 | `docker logs CONTAINER ID`                                     | Ausgabe des Logs                                                         |
-| `docker inspect -f {{.LogPath}} CONTAINER ID`                  | Wo wird die Log-Datei gespeichert                                        ||| Command                  | Description 1                  | Description 2                                           |
+| `docker inspect -f {{.LogPath}} CONTAINER ID`                  | Wo wird die Log-Datei gespeichert                                        |
+
+| Description 1            | Description 2                  |  Description 2                                          |
 | ------------------------ | ------------------------------ | ------------------------------------------------------- |
 | `-a`                     | Docker ps -a                   | All                                                     |
 | `-p`                     | docker run -p 5000:80          | Port                                                    |
